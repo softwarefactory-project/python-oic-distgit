@@ -4,7 +4,7 @@
 
 Name:          python-%{uname}
 Version:       0.9.4
-Release:       3%{?dist}
+Release:       4%{?dist}
 Summary:       %{sum}
 
 URL:           https://github.com/OpenIDC/pyoidc
@@ -24,7 +24,7 @@ BuildRequires: python2-future python-mako python2-responses
 %package -n python2-%{uname}
 Summary:        %{sum}
 
-Requires: python-requests python2-cryptography python2-cffi
+Requires: python-requests python2-cryptography python-cffi
 Requires: python2-jwkest python-mako python-beaker
 Requires: python2-alabaster pyOpenSSL python2-cryptodomex
 
@@ -47,6 +47,9 @@ PYTHONPATH=build/lib py.test tests/ -m "not network"
 %{python2_sitelib}/*
 
 %changelog
+* Fri Mar 10 2017 Tristan Cacqueray <tdecacqu@redhat.com> 0.9.4.0-4
+- use python-cffi instead of python2-cffi to avoid conflict
+
 * Mon Mar 7 2017 Nicolas Hicher <nhicher@redhat.com> 0.9.4.0-3
 - move Requires on python2 package instead source
 
