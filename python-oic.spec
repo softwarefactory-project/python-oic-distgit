@@ -4,7 +4,7 @@
 
 Name:          python-%{uname}
 Version:       0.9.4
-Release:       4%{?dist}
+Release:       5%{?dist}
 Summary:       %{sum}
 
 URL:           https://github.com/OpenIDC/pyoidc
@@ -16,7 +16,7 @@ BuildArch:      noarch
 Buildrequires: python2-devel python-setuptools
 Buildrequires: python-httpretty python2-testfixtures python-mock
 BuildRequires: python2-jwkest pytest python2-cryptodomex
-BuildRequires: python2-future python-mako python2-responses
+BuildRequires: python-future python-mako python2-responses
 
 %description
 %{sum}.
@@ -47,6 +47,9 @@ PYTHONPATH=build/lib py.test tests/ -m "not network"
 %{python2_sitelib}/*
 
 %changelog
+* Wed Apr 19 2017 Tristan Cacqueray <tdecacqu@redhat.com> - 0.9.4-5
+- use python-future instead of python2-future
+
 * Fri Mar 10 2017 Tristan Cacqueray <tdecacqu@redhat.com> 0.9.4.0-4
 - use python-cffi instead of python2-cffi to avoid conflict
 
