@@ -16,7 +16,7 @@ BuildArch:      noarch
 Buildrequires: python2-devel python-setuptools
 Buildrequires: python-httpretty python2-testfixtures python-mock
 BuildRequires: python2-jwkest pytest python2-cryptodomex
-BuildRequires: python2-future python-mako python2-responses
+BuildRequires: python-future python-mako python2-responses
 
 %description
 %{sum}.
