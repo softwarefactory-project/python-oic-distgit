@@ -4,7 +4,7 @@
 
 Name:          python-%{uname}
 Version:       0.9.4
-Release:       5%{?dist}
+Release:       6%{?dist}
 Summary:       %{sum}
 
 URL:           https://github.com/OpenIDC/pyoidc
@@ -13,10 +13,17 @@ License:       Apache 2.0
 
 BuildArch:      noarch
 
-Buildrequires: python2-devel python-setuptools
-Buildrequires: python-httpretty python2-testfixtures python-mock
-BuildRequires: python2-jwkest pytest python2-cryptodomex
-BuildRequires: python-future python-mako python2-responses
+Buildrequires: python2-devel
+BuildRequires: python-setuptools
+Buildrequires: python-httpretty
+BuildRequires: python2-testfixtures
+BuildRequires: python-mock
+BuildRequires: python2-jwkest
+BuildRequires: pytest
+BuildRequires: python2-cryptodomex
+BuildRequires: python-future
+BuildRequires: python-mako
+BuildRequires: python2-responses
 
 %description
 %{sum}.
@@ -24,9 +31,15 @@ BuildRequires: python-future python-mako python2-responses
 %package -n python2-%{uname}
 Summary:        %{sum}
 
-Requires: python-requests python2-cryptography python-cffi
-Requires: python2-jwkest python-mako python-beaker
-Requires: python2-alabaster pyOpenSSL python2-cryptodomex
+Requires: python-requests
+Requires: python2-cryptography
+Requires: python-cffi
+Requires: python2-jwkest
+Requires: python-mako
+Requires: python-beaker
+Requires: python2-sphinx-theme-alabaster
+Requires: pyOpenSSL
+Requires: python2-cryptodomex
 
 %description -n python2-%{uname}
 %{sum}.
@@ -47,6 +60,9 @@ PYTHONPATH=build/lib py.test tests/ -m "not network"
 %{python2_sitelib}/*
 
 %changelog
+* Sun Oct 01 2017 Tristan Cacqueray <tdecacqu@redhat.com> - 0.9.4-6
+- Use python2-sphinx-theme-alabaster instead of alabaster
+
 * Wed Apr 19 2017 Tristan Cacqueray <tdecacqu@redhat.com> - 0.9.4-5
 - use python-future instead of python2-future
 
